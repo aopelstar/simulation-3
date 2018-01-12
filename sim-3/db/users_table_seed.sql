@@ -5,6 +5,6 @@ firstName varchar(15),
 lastName varchar(15),
 hairColor varchar(10),
 eyeColor varchar(10),
-hobby varchar(30),
-birthday varchar(10)
+hobby text,
+age integer
 )
