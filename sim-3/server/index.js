@@ -16,7 +16,7 @@ const express = require('express')
     app.use( passport.initialize() );
     app.use( passport.session() );
 
-    massive(process.env.CONNECTION_STRING).then( db => { //37d
+    massive(process.env.CONNECTION_STRING).then( db => { // 37d 83c 83d 83e
         app.set('db', db);
     })
 
