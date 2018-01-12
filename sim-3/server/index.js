@@ -51,16 +51,18 @@ const express = require('express')
 
     passport.deserializeUser((id, done) => {
         app.get('db').find_session_user([id])
-        .then(function(user) {
+        .then(function(user) { //
             return done(null, user[0])
         })
     })
 
     app.get('/auth', passport.authenticate('auth0'));
     app.get('/auth/callback', passport.authenticate('auth0', {
-        successRedirect: 'http://localhost:3000/#private',
-        failureRedirect: 'http://www.oprah.com'
+        successRedirect: 'http://localhost:4001/api/auth/setUser',
+        failureRedirect: 'http://localhost:4001/api/auth/login'
     }))
+
+    app.get('/api/auth')
 
     app.listen(process.env.PORT, () => {
         console.log(`heavy petting on port ${process.env.PORT}`)

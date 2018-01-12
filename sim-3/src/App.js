@@ -7,7 +7,8 @@ class App extends Component {
     return (
       <div className="App">
       <body>
-        <div className="login"></div>
+        <div className="login"> {/* 54C */}
+         <a href={process.env.REACT_APP_LOGIN}><button className="button">Login/Register</button></a></div> {/* 54H */}
         </body>
       </div>
     );
