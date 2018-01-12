@@ -1,28 +1,18 @@
-.App {
-  text-align: center;
+body {
+  background-image: linear-gradient(99deg, #ff70a6, #ff9770 73%, #e9ff70); /*23F*/
+  position: relative; 
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.login {
+  width: 400px;;
+  height: 400px;
+  background-image:  linear-gradient(97deg, #ff7a6e, #ff9770);
+  box-shadow: 0 10px 20px 0
+  rgba(0, 0, 0, 0.1), 0 6px 6px 0
+  rgba(0, 0, 0, 0.2);
+   box-sizing: border-box; /*24f */
+   position: absolute;
+   left: 30%;
+   top: 200px;
 }

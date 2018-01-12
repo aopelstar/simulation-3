@@ -43,6 +43,23 @@ const express = require('express')
         })
 
         
+    }));
+
+    passport.serializeUser((id, done) =>{
+        done(null, id);
+    })
+
+    passport.deserializeUser((id, done) => {
+        app.get('db').find_session_user([id])
+        .then(function(user) {
+            return done(null, user[0])
+        })
+    })
+
+    app.get('/auth', passport.authenticate('auth0'));
+    app.get('/auth/callback', passport.authenticate('auth0', {
+        successRedirect: 'http://localhost:3000/#private',
+        failureRedirect: 'http://www.oprah.com'
     }))
 
     app.listen(process.env.PORT, () => {
